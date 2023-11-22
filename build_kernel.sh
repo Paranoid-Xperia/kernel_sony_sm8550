@@ -47,6 +47,7 @@ NO_BUILD=0
 USE_BEAR=0
 PROG=${0##*/}
 OUT=out
+dtbo=out/arch/arm64/boot/dts/vendor/qcom/kalama-yodo-pdx234_generic-overlay.dtbo
 
 # Parse arguments
 while [[ $# -gt 0 ]]; do
@@ -176,5 +177,5 @@ if [[ $NO_BUILD -eq 0 ]]; then
 fi
 
 if [[ $BUILD_DTBO -eq 1 ]]; then
-    mkdtboimg create "$(pwd)"/"$OUT"/dtbo.img "$(find "$OUT"/arch/arm64/boot/dts -name "*.dtbo")"
+    python2 scripts/dtc/libfdt/mkdtboimg.py create "$(pwd)"/"$OUT"/dtbo.img --page_size=4096 $dtbo
 fi
