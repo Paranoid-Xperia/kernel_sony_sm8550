@@ -6,5 +6,7 @@ obj-y	+= cirrus_cs40l25/
 obj-y	+= cirrus_cs40l2x_codec/
 obj-y	+= hdmi_detect/
 obj-y	+= ldo_vibrator/
+obj-y	+= lxs_ts/
 obj-y	+= slg51000_regulator/
+obj-y	+= sony_camera/
 obj-y	+= et6xx/
